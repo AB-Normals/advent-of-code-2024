@@ -1,6 +1,6 @@
 # --- Day 3: Mull It Over ---
 
-## --- Part Two ---
+## --- Part One ---
 
 "Our computers are having issues, so I have no idea if we have any Chief Historians in stock! You're welcome to check the warehouse, though," says the mildly flustered shopkeeper at the North Pole Toboggan Rental Shop. The Historians head out to take a look.
 
@@ -26,8 +26,10 @@ As you scan through the corrupted memory, you notice that some of the conditiona
 
 There are two new instructions you'll need to handle:
 
+```text
     The do() instruction enables future mul instructions.
     The don't() instruction disables future mul instructions.
+```
 
 Only the most recent do() or don't() instruction applies. At the beginning of the program, mul instructions are enabled.
 
@@ -40,4 +42,3 @@ This corrupted memory is similar to the example from before, but this time the m
 This time, the sum of the results is 48 (2*4 + 8*5).
 
 Handle the new instructions; what do you get if you add up all of the results of just the enabled multiplications?
-
