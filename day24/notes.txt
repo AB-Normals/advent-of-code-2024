@@ -1,0 +1,88 @@
+z07 z16 z23 z27 sono bit risultanti errati
+
+# Sommatore per bit z07  (c07 = carry per z07)
+z07 = (x07 XOR y07) XOR c07
+c07 = (x06 AND y06) OR ((x06 XOR y06) AND c06) 
+
+# Analisi di un bit corretto x06
+z06 = XOR (qpd vcj)
+vcj = XOR (y06 x06)
+qpd = OR (qrs twp)
+qrs = AND (x05 y05)
+twp = AND (stb nwc)
+stb = OR (dhh vdq)
+nwc = XOR (y05 x05)
+
+##############
+Find z07 ERROR
+##############
+z07 = AND (gnj scw) > must be XOR
+scw = XOR (x07 y07)
+gnj = OR (ghw vsb)
+vsb = AND (x06 y06)
+ghw = AND (qpd vcj)
+qpd = OR (qrs twp)
+vcj = XOR (y06 x06)
+
+z08 = XOR (pwg bdf)
+pwg = XOR (x08 y08)
+bdf = OR (dvq shj)
+dvq = AND (x07 y07)
+shj = XOR (gnj scw)  > must be AND
+gnj = OR (ghw vsb)
+
+!!!! First 2 [z07 , shj] 
+
+##############
+Find z16 ERROR
+##############
+z16 = XOR (ngf tpk)
+tpk = AND (y16 x16) -> must be XOR
+ngf = OR (kqb qvd)
+qvd = AND (x15 y15)
+kqb = AND (mdt tgc)
+mdt = OR (hcm jpn)
+tgc = XOR (y15 x15)
+
+z17 = XOR (hbd vnm)
+vnm = XOR (y17 x17)
+hbd = OR (wkb bfn)
+wkb = XOR (x16 y16) -> must be AND
+
+!!!! First 4 [z07 , shj, tpk, wkb]
+
+##############
+Find z23 ERROR
+##############
+z23 = OR (jwb hjp) -> must be XOR
+jwb = AND (x23 y23)
+hjp = AND (gvb pvr)
+pvr = XOR (x23 y23)
+gvb = OR (mtn fwq)
+mtn = AND (y22 x22)
+fwq = AND (cdw btq)
+
+z24 = XOR (pfn shm)
+shm = XOR (y24 x24)
+pfn = XOR (gvb pvr) -> must be OR
+pvr = XOR (x23 y23)
+gvb = OR (mtn fwq)
+
+!!!! First 6 [(z07 , shj), (tpk, wkb), (z23, pfn)]
+
+##############
+Find z27 ERROR
+##############
+z27 = AND (x27 y27) -> must be a XOR
+
+z28 = XOR (wwv btj)
+btj = XOR (x28 y28)
+wwv = OR (gtc kcd)
+gtc = AND (vpt hdg)
+kcd = XOR (vpt hdg) -> must be a AND
+vpt = XOR (x27 y27)
+hdg = OR (mhk wvb)
+wvb = AND (x26 y26)
+mhk = AND (rts bws)
+
+!!! Find all 8 swap [[(z07 , shj), (tpk, wkb), (z23, pfn), (z27, kcd)]]
